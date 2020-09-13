@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import * as yup from "yup";
 import { Link } from 'react-router-dom';
 
 const Form = () => {
+
+    //state holds initial form value
+    const [formInfo, setFormInfo] = useState({
+        name: '',
+        size: '',
+        pepperoni: false,
+        sausage: false,
+        canadian: false,
+        italian: false,
+        chicken: false,
+        onions: false,
+        pepper: false,
+        special: ''
+    });
+
+    const formSubmit = e => {
+
+    };
+
+    const changeHandler = e => {
+
+    };
+
     return (
         <div>
 
@@ -11,7 +34,7 @@ const Form = () => {
                 <h2>Build your own pizza</h2>
             </div>
 
-            <form>
+            <form onSubmit={formSubmit}>
                 {/* Name */}
                 <div>
                     <h5 className="form-title">1. Name</h5>
