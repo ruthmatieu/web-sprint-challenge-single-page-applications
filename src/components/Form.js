@@ -33,10 +33,25 @@ const Form = () => {
         special: ''
     });
 
+    const [errorState, setErrorState] = useState({
+        name: '',
+        size: '',
+        pepperoni: false,
+        sausage: false,
+        canadian: false,
+        italian: false,
+        chicken: false,
+        onions: false,
+        pepper: false,
+        special: ''
+    });
+
+
     // when form is submitted, form will clear and send user data to separate page
     const formSubmit = e => {
         //prevents page refresh default
         e.preventDefault();
+        console.log(`Thank you! We've received your order.`)
     };
 
     const changeHandler = e => {
