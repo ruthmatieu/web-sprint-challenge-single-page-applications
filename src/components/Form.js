@@ -3,6 +3,20 @@ import axios from 'axios';
 import * as yup from "yup";
 import { Link } from 'react-router-dom';
 
+//form validation
+const formSchema = yup.object().shape({
+    name: yup.string()
+             .test('len', 'Name must be more than 2 characters long.', val => val.length > 2),
+    pepperoni: yup.boolean(),
+    sausage: yup.boolean(),
+    canadian: yup.boolean(),
+    italian: yup.boolean(),
+    chicken: yup.boolean(),
+    onions: yup.boolean(),
+    pepper: yup.boolean(),
+    special: yup.string()
+})
+
 const Form = () => {
 
     //state holds initial form value
