@@ -45,6 +45,56 @@ const Form = () => {
                     </label><br/>
                 </div>
 
+                {/*
+                <div>
+                    <h4 className="form-title">3. Please select your sauce:</h4>
+
+                    <label>
+                        <input
+                            type="radio"
+                            id="original"
+                            value="Original Red"
+                            checked={formInfo.sauce === 'Original Red'}
+                            onChange={changeHandler}
+                        />
+                    Original Red
+                    </label><br/>
+
+                    <label>
+                        <input
+                            type="radio"
+                            id="garlic"
+                            value="Garlic Ranch"
+                            checked={formInfo.sauce === 'Garlic Ranch'}
+                            onChange={changeHandler}
+                        />
+                    Garlic Ranch
+                    </label><br/>
+                    
+                    <label>
+                        <input
+                            type="radio"
+                            id="bbq"
+                            value="BBQ Sauce"
+                            checked={formInfo.sauce === 'BBQ Sauce'}
+                            onChange={changeHandler}
+                        />
+                    BBQ Sauce
+                    </label><br/>
+
+                    <label>
+                        <input
+                            type="radio"
+                            id="alfredo"
+                            value="Spinach Alfredo"
+                            checked={formInfo.sauce === 'Spinach Alfredo'}
+                            onChange={changeHandler}
+                        />    
+                    Spinach Alfredo
+                    </label><br/>
+                </div>
+                */}
+                
             </form>
         </div>
     )
