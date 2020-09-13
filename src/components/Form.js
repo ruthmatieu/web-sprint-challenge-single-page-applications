@@ -26,7 +26,12 @@ const Form = () => {
     };
 
     const changeHandler = e => {
-
+        //not sure what this does but know it's important to add
+        e.persist();
+        validate(e);
+        //if the input type is checkbox or radio, set the value = checked
+        let value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+        setFormInfo({...formInfo, [e.target.name]: value});
     };
 
     return (
