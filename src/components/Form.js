@@ -19,8 +19,10 @@ const Form = () => {
         special: ''
     });
 
+    // when form is submitted, form will clear and send user data to separate page
     const formSubmit = e => {
-
+        //prevents page refresh default
+        e.preventDefault();
     };
 
     const changeHandler = e => {
