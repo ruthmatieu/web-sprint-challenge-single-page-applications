@@ -94,7 +94,92 @@ const Form = () => {
                     </label><br/>
                 </div>
                 */}
-                
+
+                <div>
+                    <h4 className="form-title">3. Choice of toppings:</h4>
+    
+                    <div className="toppings-div">
+                        <div>
+                            <label htmlFor="pepperoni">
+                            <input
+                                type="checkbox"
+                                id="pepperoni"
+                                name="pepperoni"
+                                checked={formInfo.pepperoni}
+                                onChange={changeHandler}
+                            />
+                            Pepperoni
+                            </label>
+
+                            <label htmlFor="sausage">
+                                <input
+                                    type="checkbox"
+                                    id="sausage"
+                                    name="sausage"
+                                    checked={formInfo.sausage}
+                                    onChange={changeHandler}
+                                />
+                                Sausage
+                            </label>
+
+                            <label htmlFor="canadian">
+                                <input
+                                    type="checkbox"
+                                    id="canadian"
+                                    name="canadian"
+                                    checked={formInfo.canadian}
+                                    onChange={changeHandler}
+                                />
+                                Canadian Bacon
+                            </label>
+
+                            <label htmlFor="italian">
+                                <input
+                                    type="checkbox"
+                                    id="italian"
+                                    name="italian"
+                                    checked={formInfo.italian}
+                                    onChange={changeHandler}
+                                />
+                                Spicy Italian Sausage
+                            </label>
+
+                            <label htmlFor="chicken">
+                                <input
+                                    type="checkbox"
+                                    id="chicken"
+                                    name="chicken"
+                                    checked={formInfo.chicken}
+                                    onChange={changeHandler}
+                                />
+                                Grilled Chicken
+                            </label>
+
+                            <label htmlFor="onions">
+                                <input
+                                    type="checkbox"
+                                    id="onions"
+                                    name="onions"
+                                    checked={formInfo.onions}
+                                    onChange={changeHandler}
+                                />
+                                Onions
+                            </label>
+
+                            <label htmlFor="pepper">
+                                <input
+                                    type="checkbox"
+                                    id="pepper"
+                                    name="pepper"
+                                    checked={formInfo.pepper}
+                                    onChange={changeHandler}
+                                />
+                                Green Pepper
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
             </form>
         </div>
     )
