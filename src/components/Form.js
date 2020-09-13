@@ -178,6 +178,20 @@ const Form = () => {
                             </label>
                         </div>
                     </div>
+
+                    <div>
+                        <h4 className="form-title">Optional: Special Instructions</h4>
+                        <label htmlFor="special">
+                            <input
+                                type="text"
+                                id="special"
+                                name="special"
+                                placeholder="Anything else you'd like us to know?"
+                                value={formInfo.special}
+                                onChange={changeHandler}
+                            />
+                        </label>
+                    </div>
                 </div>
 
             </form>
