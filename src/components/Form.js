@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 //form validation
 const formSchema = yup.object().shape({
     name: yup.string()
-             .test('len', 'Name must be more than 2 characters long.', val => val.length > 2),
-    size: yup.string().oneOf([]),
+             .test('len', 'Name must be more than 2 characters long.', val => val.length > 2)
+             .required('Name is a required field.'),
+    size: yup.string(),
     pepperoni: yup.boolean(),
     sausage: yup.boolean(),
     canadian: yup.boolean(),
@@ -18,7 +19,10 @@ const formSchema = yup.object().shape({
     special: yup.string()
 })
 
-const Form = () => {
+const Form = (props) => {
+
+    //state for dislaying customer order
+    const [orders, setOrders] = useState([]);
 
     //state holds initial form value
     const [formInfo, setFormInfo] = useState({
@@ -70,6 +74,12 @@ const Form = () => {
         //prevents page refresh default
         e.preventDefault();
         console.log(`Thank you! We've received your order.`)
+
+        axios
+            .post('https://reqres.in/api/users', formInfo)
+            .then( res => setOrders(res))
+            .catch( err => console.log(err))
+            props.addNewOrder(orders);
     };
 
     const changeHandler = e => {
@@ -101,6 +111,7 @@ const Form = () => {
                             onChange={changeHandler}
                         />
                         {errorState.name.length > 0 ? (<p className="error">{errorState.name}</p>) : null}
+                        {errorState.name > 0 ? (<p className="error">{errorState.name}</p>) : null}
                     </label><br/>
                 </div>
 
