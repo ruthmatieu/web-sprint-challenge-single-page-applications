@@ -80,6 +80,19 @@ const Form = (props) => {
             .then( res => setOrders(res))
             .catch( err => console.log(err))
             props.addNewOrder(orders);
+
+        setFormInfo ({
+                name: '',
+                size: '',
+                pepperoni: false,
+                sausage: false,
+                canadian: false,
+                italian: false,
+                chicken: false,
+                onions: false,
+                pepper: false,
+                special: ''
+        })
     };
 
     const changeHandler = e => {
