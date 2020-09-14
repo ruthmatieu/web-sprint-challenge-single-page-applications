@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const formSchema = yup.object().shape({
     name: yup.string()
              .test('len', 'Name must be more than 2 characters long.', val => val.length > 2),
+    size: yup.string().oneOf([]),
     pepperoni: yup.boolean(),
     sausage: yup.boolean(),
     canadian: yup.boolean(),
@@ -90,15 +91,16 @@ const Form = () => {
             <form onSubmit={formSubmit}>
                 {/* Name */}
                 <div>
-                    <h5 className="form-title">1. Name</h5>
+                    <h4 className="form-title">1. Name</h4>
                     <label htmlFor="name">
                         <input
                             id="name"
                             type="text"
                             name="name"
-                            value=""
-                            onChange=""
+                            value={formInfo.name}
+                            onChange={changeHandler}
                         />
+                        {errorState.name.length > 0 ? (<p className="error">{errorState.name}</p>) : null}
                     </label><br/>
                 </div>
 
