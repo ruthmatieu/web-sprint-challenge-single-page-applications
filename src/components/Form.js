@@ -46,6 +46,23 @@ const Form = () => {
         special: ''
     });
 
+    const validator = e => {
+        yup
+            .reach(formSchema, e.target.name)
+            .validate(e.target.value)
+            .then( valid => {
+                setErrorState({
+                    ...errorState,
+                    [e.target.name]: ''
+                });
+            })
+            .catch(err => {
+                setErrorState({
+                    ...errorState,
+                    [e.target.name]: err.errors[0]
+                });
+            });
+    }
 
     // when form is submitted, form will clear and send user data to separate page
     const formSubmit = e => {
@@ -57,7 +74,7 @@ const Form = () => {
     const changeHandler = e => {
         //not sure what this does but know it's important to add
         e.persist();
-        validate(e);
+        validator(e);
         //if the input type is checkbox or radio, set the value = checked
         let value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
         setFormInfo({...formInfo, [e.target.name]: value});
