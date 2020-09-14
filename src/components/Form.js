@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useHistory } from 'react';
 import axios from 'axios';
 import * as yup from "yup";
 import { Link } from 'react-router-dom';
+import Confirmation from './Confirmation'
 
 //form validation
 const formSchema = yup.object().shape({
@@ -20,6 +21,7 @@ const formSchema = yup.object().shape({
 })
 
 const Form = (props) => {
+
 
     //state for dislaying customer order
     const [orders, setOrders] = useState([]);
@@ -73,14 +75,15 @@ const Form = (props) => {
     const formSubmit = e => {
         //prevents page refresh default
         e.preventDefault();
-        console.log(`Thank you! We've received your order.`)
+        // console.log(`Thank you! We've received your order.`)
+        // console.log(orders)
 
         axios
             .post('https://reqres.in/api/users', formInfo)
             .then( res => setOrders(res))
             .catch( err => console.log(err))
         
-        props.addNewOrder(orders);
+        props.addNewOrder(formInfo);
 
         setFormInfo ({
                 name: '',
@@ -94,6 +97,8 @@ const Form = (props) => {
                 pepper: false,
                 special: ''
         })
+
+        window.location='/confirmation'
     };
 
     const changeHandler = e => {
@@ -296,7 +301,8 @@ const Form = (props) => {
                         </label>
                     </div>
                 </div>
-                <button type="submit">Submit</button>
+                <pre>{JSON.stringify(props.results)}</pre>
+                <a href="http://localhost:3000/confirmation"><button onClick={formSubmit}>Submit</button></a>
             </form>
         </div>
     )

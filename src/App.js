@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Route, Switch } from 'react-router-dom';
+import './App.css';
 
 //components
 import Home from './components/Home';
@@ -27,7 +28,9 @@ const App = () => {
       onions: item.onions,
       pepper: item.pepper,
       special: item.special
+      
     };
+    console.log('something')
     setOrder([...order, newOrder])
   }
 
@@ -36,9 +39,9 @@ const App = () => {
       <Navbar/>
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/pizza"><Form addNewOrder={addNewOrder}/></Route>
-        {/* <Route path="/confirmation"><Confirmation/></Route> */}
-        <Confirmation results={order}/>
+        <Route path="/pizza"><Form addNewOrder={addNewOrder} results={order}/></Route>
+        <Route path="/confirmation"><Confirmation results={order}/></Route>
+        {/* <Confirmation results={order}/> */}
       </Switch>
       {/* <Confirmation results={order}/> */}
     </div>

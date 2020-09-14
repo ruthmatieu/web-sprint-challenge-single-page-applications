@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Confirmation = (props) => {
-
+  console.log(props)
     return (
         
       <div className="display-results">

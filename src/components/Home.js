@@ -8,7 +8,7 @@ const Home = () => {
     }
 
     return (
-        <section>
+        <section className="landing-hero">
             <div>
                 <h1>Your favorite food delivered <br/> while coding.</h1>
                 <Link to="/pizza" style={linkStyle}><button>Pizza</button></Link>

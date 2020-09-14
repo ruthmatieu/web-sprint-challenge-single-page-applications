@@ -10,14 +10,14 @@ const Navbar = () => {
     }
 
     return (
-        <nav>
+        <nav className="nav">
             <div className="left-nav">
                 <Link to="/" style={linkStyle}><li>Lambda Eats</li></Link>
             </div>
 
             <div className="right-nav">
                 <Link to="/" style={linkStyle}><li>Home</li></Link>
-                <Link to="/pizza" style={linkStyle}><li>Order</li></Link>
+                <Link to="/pizza" style={linkStyle}><li className="li-two">Order</li></Link>
             </div>
         </nav>
     );
