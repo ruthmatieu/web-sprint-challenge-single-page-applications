@@ -3,7 +3,9 @@ import React from 'react';
 const Confirmation = (props) => {
 
     return (
+        
       <div className="display-results">
+          <h3>Thank you! Your order has been placed.</h3>
         {props.results.map((item) => (
           
           <div key={item.id}>

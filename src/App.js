@@ -38,8 +38,9 @@ const App = () => {
         <Route exact path="/" component={Home}/>
         <Route path="/pizza"><Form addNewOrder={addNewOrder}/></Route>
         {/* <Route path="/confirmation"><Confirmation/></Route> */}
+        <Confirmation results={order}/>
       </Switch>
-      <Confirmation results={order}/>
+      {/* <Confirmation results={order}/> */}
     </div>
   );
 };

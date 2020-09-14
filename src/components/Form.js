@@ -79,7 +79,8 @@ const Form = (props) => {
             .post('https://reqres.in/api/users', formInfo)
             .then( res => setOrders(res))
             .catch( err => console.log(err))
-            props.addNewOrder(orders);
+        
+        props.addNewOrder(orders);
 
         setFormInfo ({
                 name: '',

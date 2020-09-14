@@ -1,38 +1,145 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  list-style: none;
+  justify-content: space-between;
+  margin: 2% 10%;
+}
+
+.right-nav {
+  display: flex;
+}
+
+.right-nav .li-two{
+}
+
+.landing-hero {
+  background-image: url('./images/main-hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 90% 65%;
+  height: 70vh;
+  display: grid;
+  place-items: center;
+}
+
+.landing-hero h1 {
+  padding-bottom: 10%;  
+  color:white;
+}
+
+/*LANDING PAGE BUTTON*/
+
+:root {
+  --background: #E5FFB3;
+  --background-accent: #DBF8A3;
+  --background-accent-2: #BDE66E;
+  --light: #C53030;
+  --dark: #E53E3E;
+  --text: white;
+}
+
+.landing-hero button {
+  display: block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: var(--light);
+  width: 400px;
+  height: 70px;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  background-size: 100% 100%;
+  box-shadow: 0 0 0 7px var(--light) inset;
+  text-transform: uppercase;
+}
+
+.landing-hero button:hover {
+  background-image: linear-gradient(
+    145deg,
+    transparent 10%,
+    var(--dark) 10% 20%,
+    transparent 20% 30%,
+    var(--dark) 30% 40%,
+    transparent 40% 50%,
+    var(--dark) 50% 60%,
+    transparent 60% 70%,
+    var(--dark) 70% 80%,
+    transparent 80% 90%,
+    var(--dark) 90% 100%
+  );
+  animation: background 3s linear infinite;
+}
+
+@keyframes background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+Link {
+  text-decoration: none;
+  list-style: none;
+}
+
+/*FORM*/
+.form-div {
+  display: grid;
+  place-items: center;
+  background-color: #EDEAE5;
+  margin: 0 20%;
+  -webkit-box-shadow: 5px 5px 15px 5px #BCB8B3; 
+  box-shadow: 5px 5px 15px 5px #BCB8B3;
+}
+
+.form-hero-img {
+  background-image: url('./images/hero-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 90% 60%;
+  height: 30vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+form {
+  display: flex;
+  display: grid;
+  place-items: center;
+}
+
+.form-title {
+  color: #DD7141;
+  text-align: left;
+}
+
+.toppings-div {
+  display: flex;
+}
+
+.toppings-div label{
+  display: flex;
+}
+
+.submit-btn {
+  background-color: #DD7141;
+  border: 1px solid #DD7141;
   color: white;
+  border-radius: 25px;
+  padding: 10px 50px;
+  margin: 30px 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submit-btn:hover {
+  background-color: rgb(211, 101, 55);
+  border: 1px solid rgb(211, 101, 55);
+  cursor: pointer;
 }
