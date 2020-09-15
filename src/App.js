@@ -7,6 +7,10 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Form from './components/Form';
 
+//pics
+import pep from './images/pep.jpg';
+import wings from './images/wings.jpg';
+
 function App() {
 
   //slice of state to handle customer order
@@ -35,23 +39,31 @@ function App() {
 
   const menu = [
     {
-      image: '',
-      title: 'new $10 tastemaker',
+      image: wings,
+      title: `spicy, finger-likin' wings`,
       description: 'large up to 3 toppings',
       price: '$10',
       button: 'order now'
     },
     {
-      image: '',
+      image: pep,
+      title: 'new $10 tastemaker',
       description: 'nothing beats original',
       price: '$12',
       button: 'order now'
     },
     {
-      image: '',
+      image: wings,
       title: `spicy, finger-likin' wings`,
       description: 'traditional or boneless',
       price: '$11',
+      button: 'order now'
+    },
+    {
+      image: pep,
+      title: 'new $10 tastemaker',
+      description: 'nothing beats original',
+      price: '$12',
       button: 'order now'
     }
   ]

@@ -6,7 +6,7 @@ const Navbar = () => {
 
     const linkStyle = {
         textDecoration: 'none',
-        color: 'black'
+        color: 'white'
     }
 
     return (

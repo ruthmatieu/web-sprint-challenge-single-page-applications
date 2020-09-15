@@ -49,6 +49,7 @@ describe('Tests form submission', () => {
     });
 
     it('Tests submit button', () => {
-        cy.get('form').submit()
+        cy.get('form')
+        .submit()
     })
 });

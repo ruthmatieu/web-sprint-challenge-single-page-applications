@@ -1,18 +1,23 @@
 .App {
   text-align: center;
 }
+
 .nav {
   display: flex;
   list-style: none;
   justify-content: space-between;
-  margin: 2% 10%;
+  padding: 2% 10%;
+  background-color: #040A23;
 }
 
 .right-nav {
   display: flex;
+
 }
 
-.right-nav .li-two{
+.right-nav .li-two {
+  padding-left: 60px;
+
 }
 
 .landing-hero {
@@ -84,11 +89,6 @@
   }
 }
 
-Link {
-  text-decoration: none;
-  list-style: none;
-}
-
 /*FORM*/
 .form-div {
   display: grid;
@@ -117,8 +117,10 @@ form {
 }
 
 .form-title {
-  color: #DD7141;
-  text-align: left;
+  color: #040A23;
+  font-size: 1.3rem;
+  margin: 0;
+  padding: 15px 0;
 }
 
 .toppings-div {
@@ -142,4 +144,63 @@ form {
   background-color: rgb(211, 101, 55);
   border: 1px solid rgb(211, 101, 55);
   cursor: pointer;
+}
+
+.submit-btn-card {
+  background-color: #DD7141;
+  border: 1px solid #DD7141;
+  color: white;
+  border-radius: 25px;
+  padding: 10px 50px;
+  margin: 5px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.submit-btn-card:hover {
+  background-color: rgb(211, 101, 55);
+  border: 1px solid rgb(211, 101, 55);
+  cursor: pointer;
+}
+
+h1 {
+  color: #040A23;
+}
+h2 {
+  color: #040A23;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.card-image {
+  width: 300px;
+}
+
+.card {
+  display: flex;
+}
+
+.card-title {
+  text-transform: uppercase;
+  margin: 0;
+  padding-top: 5px;
+}
+
+.card-desc {
+  margin: 0;
+  padding: 5px;
+}
+
+.card-price {
+  margin: 0;
+  padding: 5px 0;
+  color: crimson;
+  font-weight: 900;
+}
+
+.error {
+  font-size: 0.7rem;
+  color: red;
+  margin: 0;
 }

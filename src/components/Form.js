@@ -116,14 +116,14 @@ function Form() {
     return (
         <div>
 
-            <div>
+            <div className="form-hero-img">
                 <h2>Build your own pizza</h2>
             </div>
 
-            <form onSubmit={formSubmit}>
+            <form onSubmit={formSubmit} className="form-div">
                 {/* Name */}
                 <div>
-                    <h4 className="form-title">1. Name</h4>
+                    <h4 className="form-title">Name</h4>
                     <label htmlFor="name">
                         <input
                             id="name"
@@ -139,7 +139,7 @@ function Form() {
 
                 {/* Pizza size */}
                 <div>
-                    <h4 className="form-title">2. Choice of size</h4>
+                    <h4 className="form-title">Choice of size</h4>
                     <label htmlFor="size">
                         <select
                             id="size"
@@ -207,7 +207,7 @@ function Form() {
                 */}
 
                 <div>
-                    <h4 className="form-title">3. Choice of toppings:</h4>
+                    <h4 className="form-title">Choice of toppings</h4>
     
                     <div className="toppings-div">
                         <div>
@@ -304,7 +304,7 @@ function Form() {
                         </label>
                     </div>
                 </div>
-                <button disabled={buttonDisabled}>Submit</button>
+                <button className="submit-btn" disabled={buttonDisabled}>Submit</button>
                 <pre>{JSON.stringify(orders, null, 2)}</pre>
                  
             </form>
