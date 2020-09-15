@@ -16,8 +16,7 @@
 }
 
 .landing-hero {
-  background-image: url('');
-  background-color: #E4DFD9;
+  background-image: url('./images/main-hero.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 90% 65%;
@@ -101,7 +100,7 @@ Link {
 }
 
 .form-hero-img {
-  background-image: url('');
+  background-image: url('./images/hero-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 90% 60%;

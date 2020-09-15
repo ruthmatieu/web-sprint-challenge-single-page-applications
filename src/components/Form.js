@@ -1,8 +1,6 @@
-import React, { useState, useHistory } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import * as yup from "yup";
-import { Link } from 'react-router-dom';
-import Confirmation from './Confirmation'
 
 //form validation
 const formSchema = yup.object().shape({
@@ -20,8 +18,7 @@ const formSchema = yup.object().shape({
     special: yup.string()
 })
 
-const Form = (props) => {
-
+function Form() {
 
     //state for dislaying customer order
     const [orders, setOrders] = useState([]);
@@ -39,6 +36,13 @@ const Form = (props) => {
         pepper: false,
         special: ''
     });
+
+    const [buttonDisabled, setButtonDisabled] = useState(true);
+    useEffect(() => {
+        formSchema.isValid(formInfo).then(valid => {
+          setButtonDisabled(!valid);
+        });
+      }, [formInfo]);
 
     const [errorState, setErrorState] = useState({
         name: '',
@@ -80,10 +84,10 @@ const Form = (props) => {
 
         axios
             .post('https://reqres.in/api/users', formInfo)
-            .then( res => setOrders(res))
-            .catch( err => console.log(err))
+            .then( res => setOrders(res.data))
+            .catch( err => console.log(err.res))
         
-        props.addNewOrder(formInfo);
+        // props.addNewOrder(orders);
 
         setFormInfo ({
                 name: '',
@@ -97,8 +101,7 @@ const Form = (props) => {
                 pepper: false,
                 special: ''
         })
-
-        window.location='/confirmation'
+        console.log('this is the orders')
     };
 
     const changeHandler = e => {
@@ -301,8 +304,9 @@ const Form = (props) => {
                         </label>
                     </div>
                 </div>
-                <pre>{JSON.stringify(props.results)}</pre>
-                <a href="http://localhost:3000/confirmation"><button onClick={formSubmit}>Submit</button></a>
+                <button disabled={buttonDisabled}>Submit</button>
+                <pre>{JSON.stringify(orders, null, 2)}</pre>
+                 
             </form>
         </div>
     )

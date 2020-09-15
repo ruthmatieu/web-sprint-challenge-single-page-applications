@@ -6,9 +6,8 @@ import './App.css';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Form from './components/Form';
-import Confirmation from './components/Confirmation';
 
-const App = () => {
+function App() {
 
   //slice of state to handle customer order
   const [order, setOrder] = useState([])
@@ -30,21 +29,45 @@ const App = () => {
       special: item.special
       
     };
-    console.log('something')
+    console.log('addNewOrder function')
     setOrder([...order, newOrder])
   }
+
+  const menu = [
+    {
+      image: '',
+      title: 'new $10 tastemaker',
+      description: 'large up to 3 toppings',
+      price: '$10',
+      button: 'order now'
+    },
+    {
+      image: '',
+      description: 'nothing beats original',
+      price: '$12',
+      button: 'order now'
+    },
+    {
+      image: '',
+      title: `spicy, finger-likin' wings`,
+      description: 'traditional or boneless',
+      price: '$11',
+      button: 'order now'
+    }
+  ]
 
   return (
     <div className="App">
       <Navbar/>
       <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/pizza"><Form addNewOrder={addNewOrder} results={order}/></Route>
-        <Route path="/confirmation"><Confirmation results={order}/></Route>
+        <Route exact path="/"><Home menu={menu}/></Route>
+        <Route path="/pizza"><Form addNewOrder={addNewOrder}/></Route>
+        {/* <Route path="/confirmation"><Confirmation results={order}/></Route> */}
         {/* <Confirmation results={order}/> */}
       </Switch>
       {/* <Confirmation results={order}/> */}
     </div>
   );
 };
+
 export default App;
